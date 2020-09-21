@@ -15,7 +15,6 @@ rule bwa_map:
     shell:
         "bwa mem {input} | samtools view -Sb - > {output}"
 
-
 rule samtools_sort:
     input:
         "mapped_reads/{sample}.bam"
@@ -54,3 +53,5 @@ rule plot_quals:
         "plots/quals.svg"
     script:
         "scripts/plot-quals.py"
+
+        
